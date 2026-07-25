@@ -1,1 +1,0 @@
-Stop tabelasi bulundu: merkez=(753, 614), kutu=(703,563,100,103)
