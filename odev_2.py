@@ -1,7 +1,7 @@
 import cv2 as cv
 import numpy as np
 
-num = input('Which photo do you want to upload(1,2,3,4,5) ')
+num = input('Which photo do you want to upload(1,2,3,4,5):  ')
 dosya_adi = 'data_set/photo-' + num + '.jpg'
 img = cv.imread(dosya_adi)
 
@@ -18,6 +18,7 @@ upper_red2 = np.array([179, 255, 255])
 mask1 = cv.inRange(hsv, lower_red1, upper_red1)
 mask2 = cv.inRange(hsv, lower_red2, upper_red2)
 red_mask = mask1 + mask2
+
 
 contours, _ = cv.findContours(red_mask, cv.RETR_EXTERNAL, cv.CHAIN_APPROX_SIMPLE)
 
@@ -42,7 +43,7 @@ if contours:
 
 
 cv.imshow("Result", img)
-cv.imwrite("output_1.jpg", img)
+
 
 cv.waitKey(0)
 cv.destroyAllWindows()
